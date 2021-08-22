@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-root',
@@ -11,22 +11,23 @@ export class AppComponent {
   title = 'slack-app';
   sessionStarted = false;
   prospectsName = '';
+  // chatForm: FormGroup;
 
 
-  constructor(public activeModal: NgbActiveModal) {
+  constructor() {
 
   }
 
-  onSendMessage() {
-    if (!this.sessionStarted) {
-      this.createSession(chatForm.name, chatForm.message);
-      this.prospectsName = chatForm.name;
-      this.sendAndReceive();
-      this.sessionStarted = true;
-      } else {
-        this.sendAndReceive();
-      }
-  }
+  // onSendMessage(chatForm) {
+  //   if (!this.sessionStarted) {
+  //     this.createSession(chatForm.name, chatForm.message);
+  //     this.prospectsName = chatForm.name;
+  //     this.sendAndReceive();
+  //     this.sessionStarted = true;
+  //     } else {
+  //       this.sendAndReceive();
+  //     }
+  // }
 
   createSession(name: string, message: string) {
 
