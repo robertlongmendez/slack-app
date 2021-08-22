@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 
 
 @Component({
@@ -18,16 +18,16 @@ export class AppComponent {
 
   }
 
-  // onSendMessage(chatForm) {
-  //   if (!this.sessionStarted) {
-  //     this.createSession(chatForm.name, chatForm.message);
-  //     this.prospectsName = chatForm.name;
-  //     this.sendAndReceive();
-  //     this.sessionStarted = true;
-  //     } else {
-  //       this.sendAndReceive();
-  //     }
-  // }
+  onSendMessage(chatForm: NgForm) {
+    if (!this.sessionStarted) {
+      this.createSession(chatForm.value.name, chatForm.value.message);
+      this.prospectsName = chatForm.value.name;
+      this.sendAndReceive();
+      this.sessionStarted = true;
+      } else {
+        this.sendAndReceive();
+      }
+  }
 
   createSession(name: string, message: string) {
 
