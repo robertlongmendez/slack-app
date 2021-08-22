@@ -17,7 +17,7 @@ export class AppComponent {
 
   }
 
-  onSendMessage(chatForm) {
+  onSendMessage() {
     if (!this.sessionStarted) {
       this.createSession(chatForm.name, chatForm.message);
       this.prospectsName = chatForm.name;
